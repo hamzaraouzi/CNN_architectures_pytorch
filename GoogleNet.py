@@ -1,5 +1,5 @@
 import torch
-from torch.nn import nn
+import torch.nn as nn
 
 class C_block(nn.Module):
     def __init__(self, in_channels, out_channels, **kwargs):
