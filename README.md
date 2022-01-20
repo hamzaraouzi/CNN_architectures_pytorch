@@ -8,11 +8,11 @@ The plan is create a Pytorch & Keras/TensorFlow Implementation of Architectures 
 
 | Architectures            |   Pytorch  |    TensorFlow        |     CoreML       |      Edge Devices      |
 | ---                      |     ---    | --- | --- | --- |
-| VGG                      |   ✅       |   ⏳   |   ❌   |    ❌   |
-| ResNet                   |   ✅        |   ⏳   |   ❌   |   ❌   |
-| GoogleNet                |   ✅   |   ⏳   |   ❌   |   ❌   |
-| Inception                |   ✅   |   ⏳   |   ❌   |   ❌   |
-| SqueezeNet               |   ✅   |   ⏳   |   ❌   |   ❌   |
-| MobileNet                |   ✅   |   ⏳   |   ❌   |   ❌   |
-| Xception                 |   ✅   |   ⏳   |   ❌   |   ❌   |
-| Inception_ResNet V2      |   ✅   |   ⏳   |   ❌   |   ❌   |
+| (VGG)    [https://github.com/hamzaraouzi/CNN_architectures_pytorch/tree/main/VGG]                  |   ✅       |   ⏳   |   ❌   |    ❌   |
+| (ResNet)   [https://github.com/hamzaraouzi/CNN_architectures_pytorch/tree/main/ResNet]                |   ✅        |   ⏳   |   ❌   |   ❌   |
+| (GoogleNet)[https://github.com/hamzaraouzi/CNN_architectures_pytorch/tree/main/GoogleNet]               |   ✅   |   ⏳   |   ❌   |   ❌   |
+| (Inception)   [https://github.com/hamzaraouzi/CNN_architectures_pytorch/tree/main/Inception]             |   ✅   |   ⏳   |   ❌   |   ❌   |
+| (SqueezeNet)  [https://github.com/hamzaraouzi/CNN_architectures_pytorch/tree/main/SqueezeNet]             |   ✅   |   ⏳   |   ❌   |   ❌   |
+| (MobileNet)  [https://github.com/hamzaraouzi/CNN_architectures_pytorch/tree/main/MobileNet]              |   ✅   |   ⏳   |   ❌   |   ❌   |
+| (Xception) [https://github.com/hamzaraouzi/CNN_architectures_pytorch/tree/main/Xception]             |   ✅   |   ⏳   |   ❌   |   ❌   |
+| (Inception_ResNet V2) [https://github.com/hamzaraouzi/CNN_architectures_pytorch/tree/main/Inception-ResNet]    |   ✅   |   ⏳   |   ❌   |   ❌   |
