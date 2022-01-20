@@ -12,31 +12,48 @@ from Resnet34 import Resnet34
 from vgg19 import *
 from  resnet101 import Resnet101
 from mobileNetV1 import MobileNetV1
+from Xception import Xception
 
 def main():
+    
+    print(f"creation of {config.MODEL} Architecture")
+    if config.Model == 'Inception-ResnetV2':
+        model = Xception(in_channels=config.IN_CHANNELS, num_classes=config.NUM_CLASSES).to(device=config.DEVICE)
+        optimizer = optim.RMSprop(model.parameters(),lr=0.045,eps=1.0,alpha=0.9)
+        #decayRate = 0.94
+        #lr_scheduler =optim.lr_scheduler.ExponentialLR(optimizer=optimizer, gamma=decayRate)
+
+
+    if config.MODEL == 'Xception':
+    
+        model = Xception(in_channels=config.IN_CHANNELS, num_classes=config.NUM_CLASSES).to(device=config.DEVICE)
+        optimizer = optim.SGD(model.parameters(),momentum=0.9,lr=0.045)
+
+        #decayRate = 0.94
+        #lr_scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer=optimizer, gamma=decayRate)
 
     if config.MODEL=="vgg":
-        print(" creation of architecture vgg")
+
         model = VGG_batchNorm(in_channels=config.IN_CHANNELS, num_classes=config.NUM_CLASSES).to(device=config.DEVICE)
         optimizer = optim.SGD(model.parameters(), momentum=0.9, lr=1e-2, weight_decay=5e-4)
 
     elif config.MODEL =="resnet34":
-        print(" creation of architecture Resnet34")
+    
         model = Resnet34(in_channels=config.IN_CHANNELS, num_classes=config.NUM_CLASSES).to(device=config.DEVICE)
         optimizer = optim.SGD(model.parameters(), momentum=0.9, lr=1e-2, weight_decay=5e-4)
 
     elif config.MODEL =="resnet101":
-        print(" creation of architecture Resnet101")
+        
         model = Resnet101(in_channels=config.IN_CHANNELS, num_classes=config.NUM_CLASSES).to(device=config.DEVICE)
         optimizer = optim.SGD(model.parameters(), momentum=0.9, lr=1e-2, weight_decay=5e-4)
 
     elif config.MODEL =="mobileNetV1":
-        print(" creation of architecture mobileNetV1")
+        
         model = MobileNetV1(in_channels=config.IN_CHANNELS, shallow=False, num_classes=config.NUM_CLASSES).to(device=config.DEVICE)
         optimizer = optim.RMSprop(model.parameters(), lr=0.01)
 
     elif config.MODEL =="D":
-        print(" creation of architecture D")
+        
         model = VGG16_2(in_channels=config.IN_CHANNELS, num_classes=config.NUM_CLASSES).to(device=config.DEVICE)
         optimizer = optim.SGD(model.parameters(), momentum=0.9, lr=1e-2, weight_decay=5e-4)
 
