@@ -176,8 +176,10 @@ class InceptionAux(nn.Module):
 
 class InceptionV2(nn.Module):
     
-    def __init__(self, num_classes = 10):
+    def __init__(self, num_channels = 3 , num_classes = 10, aux = True):
         super(InceptionV2, self).__init__()
+
+        self.aux = aux
         
         self.conv1 = ConvBlock(3, 32, kernel_size=3, stride=2, padding=0)
         self.conv2 = ConvBlock(32, 32, kernel_size=3, stride=1, padding=0)
@@ -231,7 +233,8 @@ class InceptionV2(nn.Module):
         x = self.inception4d(x)
         x = self.inception4e(x)
         
-        aux = self.aux(x)
+        if self.aux:
+            aux = self.aux(x)
         
         x = self.inceptionRed2(x)    
         x = self.inception5a(x)
@@ -242,8 +245,9 @@ class InceptionV2(nn.Module):
         x = torch.flatten(x, 1)
         x = self.fc(x)
         
+        if self.aux:
+            return x, aux
         return x, aux
-
 
 
 
