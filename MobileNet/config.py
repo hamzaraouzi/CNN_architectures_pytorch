@@ -13,7 +13,7 @@ NUM_CLASSES = 10 # instead of 1000 in the paper because they trained on imageNet
 LEARNING_RATE = 1e-2
 
 DATASET_HOME = "natural_images_sets/"
-LOGS_PATH = "/content/drive/MyDrive/dl_projects/mobileNetV1/logs"
+LOGS_PATH = "logs"
 CHECKPOINTS_DIR = "/content/drive/MyDrive/dl_projects/mobileNetV1"
 
 SAVE_MODEL = True

@@ -13,8 +13,8 @@ MODEL = "resnet101"
 LEARNING_RATE = 1e-2
 
 DATASET_HOME = "natural_images_sets/"
-LOGS_PATH = "/content/drive/MyDrive/dl_projects/mobileNetV1/logs"
-CHECKPOINTS_DIR = "/content/drive/MyDrive/dl_projects/mobileNetV1"
+LOGS_PATH = "logs"
+CHECKPOINTS_DIR = f"/content/drive/MyDrive/dl_projects/{MODEL}"
 
 SAVE_MODEL = True
 LOAD_MODEL = False
