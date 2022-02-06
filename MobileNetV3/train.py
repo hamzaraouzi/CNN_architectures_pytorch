@@ -15,7 +15,7 @@ def main():
     
     
     model = MobileNetV2(in_channels=config.IN_CHANNELS, num_classes=config.NUM_CLASSES).to(device=config.DEVICE)
-    optimizer = optim.Adam(model.parameters(),momentum=0.9,lr=0.01, weight_decay=4e-4)
+    optimizer = optim.RMSprop(model.parameters(),momentum=0.9,lr=0.001, weight_decay=4e-4)
 
 
     decayRate = 0.98
