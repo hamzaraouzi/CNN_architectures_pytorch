@@ -10,11 +10,14 @@ NUM_EPOCHS = 60
 BATCH_SIZE = 32
 NUM_CLASSES = 10 # instead of 1000 in the paper because they trained on imageNet dataset
 
+MODE = 'large' #or 'small
+WIDTH_MULTIPLIER = 1.0
+
 LEARNING_RATE = 1e-2
 
 DATASET_HOME = "natural_images_sets/"
 LOGS_PATH = "logs"
-CHECKPOINTS_DIR = "/content/drive/MyDrive/dl_projects/MobileNetV2"
+CHECKPOINTS_DIR = "/content/drive/MyDrive/dl_projects/MobileNetV3"
 
 SAVE_MODEL = True
 LOAD_MODEL = False

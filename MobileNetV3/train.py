@@ -9,16 +9,16 @@ from torch.utils.tensorboard import SummaryWriter
 from utils import plot_to_tensorboard, save_checkpoint, load_checkpoint
 
 import torch.nn as nn 
-from mobileNet_v2 import MobileNetV2
+from mobileNet_v3 import MobileNetV3
 
 def main():
     
     
-    model = MobileNetV2(in_channels=config.IN_CHANNELS, num_classes=config.NUM_CLASSES).to(device=config.DEVICE)
-    optimizer = optim.RMSprop(model.parameters(),momentum=0.9,lr=0.001, weight_decay=4e-4)
+    model = MobileNetV3(mode= config.MODE, width_multiplier=config.WIDTH_MULTIPLIER, in_channels=config.IN_CHANNELS, num_classes=config.NUM_CLASSES).to(device=config.DEVICE)
+    optimizer = optim.Adam(model.parameters(),momentum=0.9,lr=0.01, weight_decay=4e-4)
 
 
-    decayRate = 0.98
+    #decayRate = 0.98
     #lr_scheduler = torch.optim.lr_scheduler.StepLR(optimizer=optimizer, step_size = 1,gamma=decayRate, verbose=True)
 
     #getting train and test loaders
